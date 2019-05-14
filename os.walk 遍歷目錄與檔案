@@ -1,0 +1,17 @@
+import os
+dir_list=[]
+
+
+for filesys in os.walk(r'e:\Python data\data\image'):
+    dir_list +=[filesys[0]] # 取出所有目錄 ,再利用 os.listdir 列出檔案
+
+
+for dirs in dir_list:
+    for file in os.listdir(dirs):
+        full=dirs+'\\'+file
+        if os.path.isfile(full) : print(full)
+        
+for dirs in dir_list:
+    for file in os.listdir(dirs):
+        full=dirs+'\\'+file
+        if os.path.isdir(full) : print(full)
